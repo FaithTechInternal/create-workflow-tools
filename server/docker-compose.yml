@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:13
+    container_name: db
+    ports:
+      - "${DB_PORT}:${DB_PORT}"
+    environment:
+      POSTGRES_DB: faithtech_create
+      POSTGRES_USER: faithtech_user
+      POSTGRES_PASSWORD: faithtech_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
